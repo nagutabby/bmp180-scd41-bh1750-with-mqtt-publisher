@@ -33,6 +33,8 @@ station_if = network.WLAN(network.STA_IF)
 station_if.active(True)
 time.sleep(2)
 station_if.connect(WIFI_SSID, WIFI_PASSWORD)
+while not station_if.isconnected():
+    time.sleep(1)
 print("Successfully connected to Wi-Fi!")
 print('Network config:', station_if.ifconfig())
 
